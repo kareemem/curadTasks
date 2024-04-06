@@ -1,0 +1,32 @@
+{
+  "common":{
+    "loading":"Loading..."
+  },
+  "nav":{
+    "tasks":"Tasks",
+    "allTasks":"All-Tasks",
+    "users":"Users",
+    "logOut":"Logout"
+  },
+  "ts":{
+    "errorSession":"Your session has expired.please login to your account again",
+    "done":"Task Created Successfully",
+    "doneU":"Task Updated Successfully"
+  },
+  "notFound":{
+    "h2":"Oops! Page Not Be Found",
+    "p":"Sorry but the page you are looking for does not exist, have been removed. name changed or is temporarily unavailable",
+    "a":"Back to homepage"
+  },
+  "details":{
+    "Complete":"Complete",
+    "Dead-LineDate":"Dead-Line Date",
+    "Status":"Status"
+  },
+  "tasks":{
+    "chooseTask":"Choose the tasks you want",
+    "In-Progress":"In-Progress",
+    "Complete":"Complete",
+    "Details":"Details"
+  }
+}

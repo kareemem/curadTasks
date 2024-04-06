@@ -1,0 +1,124 @@
+<div class="container py-5 dir">
+  <div>
+    <button class="btn btn-danger d-block ms-auto" (click)="addTask()">
+      {{ "allTasks.addTask" | translate }}
+    </button>
+  </div>
+  <div>
+    <div class="row mt-3">
+      <div class="col-md-3">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>{{ "allTasks.Search" | translate }}</mat-label>
+          <input
+            matInput
+            (keyup)="search($event.target)"
+            placeholder="title search"
+          />
+        </mat-form-field>
+      </div>
+      <div class="col-md-3">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>{{ "allTasks.byUser" | translate }}</mat-label>
+          <mat-select (selectionChange)="selectUser($event)">
+            <mat-option
+              *ngFor="let user of SelectDataSource"
+              [value]="user?.userId._id"
+            >
+              {{ user?.userId.username }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-3">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>{{ "allTasks.Status" | translate }}</mat-label>
+          <mat-select (selectionChange)="selectStatus($event)">
+            <mat-option *ngFor="let status of status" [value]="status?.name">
+              {{ status.name || status.allStatus }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-3">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>{{ "allTasks.date" | translate }}</mat-label>
+          <mat-date-range-input [rangePicker]="picker">
+            <input
+              matStartDate
+              placeholder="Start date"
+              (dateChange)="selectDate($event, 'fromDate')"
+            />
+            <input
+              matEndDate
+              placeholder="End date"
+              (dateChange)="selectDate($event, 'toDate')"
+            />
+          </mat-date-range-input>
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <div class="my-5">
+    <table class="w-100" dir="ltr">
+      <thead class="bg-danger">
+        <th class="text-center roundedLeft">
+          {{ "allTasks.counter" | translate }}
+        </th>
+        <th class="text-center">{{ "allTasks.title" | translate }}</th>
+        <th class="text-center">{{ "allTasks.user" | translate }}</th>
+        <th class="text-center w-25">{{ "allTasks.deadline" | translate }}</th>
+        <th class="text-center">{{ "allTasks.Status" | translate }}</th>
+        <th class="text-center roundedRight">
+          {{ "allTasks.edit" | translate }}
+        </th>
+      </thead>
+      <tbody>
+        <tr
+          class="text-center border-bottom"
+          *ngFor="
+            let data of dataSource
+              | paginate
+                : {
+                    id: 'tasks',
+                    itemsPerPage: 5,
+                    currentPage: page,
+                    totalItems: total
+                  };
+            let i = index
+          "
+        >
+          <td>{{ i + 1 }}</td>
+          <td>{{ data.title }}</td>
+          <td>{{ data.userId.username }}</td>
+          <td>{{ data.deadline }}</td>
+          <td>{{ data.status }}</td>
+          <td>
+            <button
+              class="btn bg-warning d-block mx-auto"
+              (click)="updateTask(data)"
+            >
+              {{ "allTasks.update" | translate }}
+            </button>
+            <button
+              class="btn bg-danger d-block mx-auto mt-1"
+              (click)="deleteTask(data._id)"
+            >
+              {{ "allTasks.delete" | translate }}
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-center">
+      <pagination-controls
+        (pageChange)="changePage($event)"
+        id="tasks"
+      ></pagination-controls>
+    </div>
+  </div>
+</div>

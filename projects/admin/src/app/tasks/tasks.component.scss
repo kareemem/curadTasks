@@ -1,0 +1,25 @@
+::ng-deep{
+.mdc-text-field--filled:not(.mdc-text-field--disabled){
+  background-color: transparent !important;
+}
+
+.ngx-pagination .current{
+  background-color: rgb(220, 53, 69) !important;
+}
+
+}
+table{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: .9375rem;
+  .roundedLeft{
+    border-top-left-radius: .9375rem;
+  }
+  .roundedRight{
+    border-top-right-radius: .9375rem;
+  }
+  th,td{
+    padding: .8125rem;
+  }
+}
+
+

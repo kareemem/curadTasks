@@ -1,0 +1,17 @@
+<div class="p-2">
+  <header>
+    <div class="text-center">
+      <h2>{{'confirmation.title'|translate}}</h2>
+    </div>
+  </header>
+  <footer>
+    <div class="d-flex justify-content-center align-items-center">
+      <button mat-flat-button class="btn py-1 px-5 mx-2 bg-success" (click)="confirm()">
+        {{'confirmation.yes'|translate}}
+      </button>
+      <button mat-flat-button class="btn btn-danger py-1 px-5 bg-danger" (click)="close()">{{'confirmation.no'|translate}}
+      </button>
+    </div>
+  </footer>
+
+</div>

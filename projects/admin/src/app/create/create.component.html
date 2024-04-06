@@ -1,0 +1,124 @@
+<div class="login d-flex justify-content-center align-items-center m-auto">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 p-0 position-relative">
+        <div class="overlay"></div>
+        <img
+          src="../../assets/desola-lanre-ologun-zYgV-NGZtlA-unsplash.jpg"
+          alt="login img"
+        />
+      </div>
+      <div class="col-md-6">
+        <div
+          class="h-100 d-flex align-items-center justify-content-center w-100"
+        >
+          <div class="box w-75 my-5">
+            <h2 class="my-3">Create Admin</h2>
+            <form [formGroup]="adminForm" (ngSubmit)="createForm(adminForm)">
+              <div class="w-100">
+                <label class="my-2">Email :</label>
+                <input
+                  formControlName="email"
+                  type="email"
+                  placeholder="email...."
+                  class="form-control"
+                />
+                <div
+                  class="alert alert-danger"
+                  *ngIf="
+                    adminForm.get('email')?.errors &&
+                    adminForm.get('email')?.touched
+                  "
+                >
+                  <p
+                    class="m-0"
+                    *ngIf="adminForm.get('email')?.getError('required')"
+                  >
+                    email is required
+                  </p>
+                  <p
+                    class="m-0"
+                    *ngIf="adminForm.get('email')?.getError('email')"
+                  >
+                    This is not email
+                  </p>
+                </div>
+              </div>
+              <div class="w-100">
+                <label class="my-2">Password :</label>
+                <input
+                  formControlName="password"
+                  type="password"
+                  placeholder="password...."
+                  class="form-control"
+                />
+                <div
+                  class="alert alert-danger"
+                  *ngIf="
+                    adminForm.get('password')?.errors &&
+                    adminForm.get('password')?.touched
+                  "
+                >
+                  <p
+                    class="m-0"
+                    *ngIf="adminForm.get('password')?.getError('required')"
+                  >
+                    password is required
+                  </p>
+                  <p
+                    class="m-0"
+                    *ngIf="adminForm.get('password')?.getError('minlength')"
+                  >
+                    The password must be at least 5 characters long
+                  </p>
+                  <p
+                    class="m-0"
+                    *ngIf="adminForm.get('password')?.getError('maxlength')"
+                  >
+                    The password must be at most 10 characters long
+                  </p>
+                </div>
+              </div>
+              <div class="w-100">
+                <label class="my-2">Name :</label>
+                <input
+                  formControlName="username"
+                  type="text"
+                  placeholder="name...."
+                  class="form-control"
+                />
+                <div
+                  class="alert alert-danger"
+                  *ngIf="
+                    adminForm.get('username')?.errors &&
+                    adminForm.get('username')?.touched
+                  "
+                >
+                  <p
+                    class="m-0"
+                    *ngIf="adminForm.get('username')?.getError('required')"
+                  >
+                    email is required
+                  </p>
+                </div>
+              </div>
+              <button
+                [disabled]="adminForm.invalid"
+                type="submit"
+                class="btn text-white py-1 mt-3 mx-auto d-block"
+              >
+                <span *ngIf="!sendLoad"> Create </span>
+                <span *ngIf="sendLoad">
+                  <i class="fa-solid fa-spinner fa-spin"></i>
+                </span>
+              </button>
+            </form>
+            <div class="d-flex justify-content-center">
+              <a class="py-1 mt-3 btn createAdmin" routerLink="/login">Login</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+{
+  "common":{
+    "loading":"Loading..."
+  },
+  "allTasks":{
+    "addTask":"Add Task",
+    "Search":"Search"
+    ,"byUser":"By User"
+    ,"Status":"Status"
+    ,"date":"Enter a date range"
+    ,"counter":"No."
+    ,"title":"Title"
+    ,"user":"User"
+    ,"deadline":"DeadLine Date"
+    ,"edit":"Edit"
+    ,"update":"Update"
+    ,"delete":"Delete"
+  },
+  "addTasks":{
+    "addNewTask":"Add New Task",
+    "errorTitle":"The title must be at least 5 characters long",
+    "selectImage":"Select Image"
+    ,"deadlineDate":"Deadline Date Month/Day/Years"
+    ,"description":"Description"
+    ,"create":"Create"
+    ,"close":"Close"
+  },
+  "nav":{
+    "tasks":"Tasks",
+    "allTasks":"All-Tasks",
+    "users":"Users",
+    "logOut":"Logout"
+  },
+  "confirmation":{
+    "title":"Are you sure that you want to discard your changes?",
+    "yes":"Yes",
+    "no":"No"
+  },
+  "ts":{
+    "errorSession":"Your session has expired.please login to your account again",
+    "done":"Task Created Successfully",
+    "doneU":"Task Updated Successfully"
+  },"user":{
+    "name":"Name",
+    "email":"Email",
+    "taskAssigned":"task Assigned",
+    "In-Active":"In-Active",
+    "Active":"Active"
+  },
+  "tsUser":{
+    "error":"Your Can't Delete This User Until Finish His Tasks",
+    "delete":"the user has been deleted successfully",
+    "errorDelete":"Your Can't Delete This User Until Finish His Tasks",
+    "status":"User Status Changed Successfully"
+  },
+  "notFound":{
+    "h2":"Oops! Page Not Be Found",
+    "p":"Sorry but the page you are looking for does not exist, have been removed. name changed or is temporarily unavailable",
+    "a":"Back to homepage"
+  }
+}
